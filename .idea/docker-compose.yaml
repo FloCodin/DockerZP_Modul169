@@ -17,12 +17,12 @@ services:
       - nextcloud_data:/var/www/html
     restart: always
 
-  gogs:
-    image: gogs/gogs
+  gitlab:
+    image: gitlab/gitlab-ce
     ports:
-      - "10080:3000"
+      - "10080:80"
     volumes:
-      - gogs_data:/data
+      - gitlab_data:/var/opt/gitlab
     restart: always
 
   portainer:
