@@ -37,4 +37,3 @@ volumes:
   mediawiki_data:
   nextcloud_data:
   gitlab_data:
-  gogs_data:
