@@ -1,0 +1,40 @@
+version: '3'
+
+services:
+  mediawiki:
+    image: mediawiki
+    ports:
+      - "8085:80"
+    volumes:
+      - mediawiki_data:/var/www/html
+    restart: always
+
+  nextcloud:
+    image: nextcloud
+    ports:
+      - "8080:80"
+    volumes:
+      - nextcloud_data:/var/www/html
+    restart: always
+
+  gogs:
+    image: gogs/gogs
+    ports:
+      - "10080:3000"
+    volumes:
+      - gogs_data:/data
+    restart: always
+
+  portainer:
+    image: portainer/portainer
+    ports:
+      - "9000:9000"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: always
+
+volumes:
+  mediawiki_data:
+  nextcloud_data:
+  gitlab_data:
+  gogs_data:
