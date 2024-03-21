@@ -13,6 +13,11 @@ services:
       - "8080:80"
     volumes:
       - nextcloud_data:/var/www/html
+    environment:
+      MYSQL_HOST: nextcloud_mysql
+      MYSQL_DATABASE: nextcloud
+      MYSQL_USER: nextcloud_user
+      MYSQL_PASSWORD: nextcloud_password
     restart: always
 
   gitlab:
@@ -26,18 +31,26 @@ services:
         external_url 'http://localhost:4444'
         gitlab_rails['db_adapter'] = 'mysql2'
         gitlab_rails['db_encoding'] = 'utf8'
-        gitlab_rails['db_host'] = 'mysql'
+        gitlab_rails['db_host'] = 'gitlab_mysql'
         gitlab_rails['db_port'] = '3306'
-        gitlab_rails['db_username'] = 'FloClauTer'
-        gitlab_rails['db_password'] = 'MirHoleDe5er'
+        gitlab_rails['db_username'] = 'root'
+        gitlab_rails['db_password'] = 'your_gitlab_mysql_root_password'
     restart: always
 
-  mysql:
+  nextcloud_mysql:
     image: mysql:latest
     environment:
-      MYSQL_ROOT_PASSWORD: your_mysql_root_password
+      MYSQL_ROOT_PASSWORD: your_nextcloud_mysql_root_password
     volumes:
-      - mysql_data:/var/lib/mysql
+      - nextcloud_mysql_data:/var/lib/mysql
+    restart: always
+
+  gitlab_mysql:
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: your_gitlab_mysql_root_password
+    volumes:
+      - gitlab_mysql_data:/var/lib/mysql
     restart: always
 
   portainer:
@@ -52,4 +65,5 @@ volumes:
   mediawiki_data:
   nextcloud_data:
   gitlab_data:
-  mysql_data:
+  nextcloud_mysql_data:
+  gitlab_mysql_data:
