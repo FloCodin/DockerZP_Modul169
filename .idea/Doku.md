@@ -76,6 +76,8 @@ Dieser Command kann auch über das Terminal eingegben werden.
 ![img9.png](img9.png)
 Hier sehen wir auf der Linken Seite die Ordnerstruktur wo wir im App Directory auch die Page.tsx haben. Diese gibt den Inhalt zurück den wir auf Localhost:3000 sehen. 
 
+Webseite: 
+![image](https://github.com/FloCodin/DockerZP_Modul169/assets/137909251/6b332b56-9f6b-4bf1-bc42-34691d93dd64)
 
 ### Prozesse
 
