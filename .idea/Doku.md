@@ -65,3 +65,18 @@ Und abschliessend haben wir noch eine Datei in einen von Uns erstellten Ordner H
 Hier kamen wir zu dem Problem dass wir eine Datenbank benötigten um es zu Installieren mit folgendenen Fehlermeldungen:![img_6.png](img_6.png) 
 Wie wir alles benannt haben: ![img_7.png](img_7.png)
 
+## Website
+
+Angefangen habe ich damit rumzuexperimentieren ob ein Simples HTML reicht, da mir dies nicht gefiel hab ich mich schnell für eine Next-app entschieden.
+Next.js is ein auf React basierendes JavaScript Framework. Anschlissend habe ich die Template Seite nur kurz angepasst und das ganze in einem seperaten Projekt fertig gemacht. 
+Da ich im aktuellen Projekt kein Node Interpret integriert hatte gab es beim versuch der Intergrierung nur Probleme. Hier die Erklärung:
+![img8.png](img8.png)
+Im Package.json File ist der Prozess "run dev" der den Localhost:3000 startet. 
+Dieser Command kann auch über das Terminal eingegben werden. 
+![img9.png](img9.png)
+Hier sehen wir auf der Linken Seite die Ordnerstruktur wo wir im App Directory auch die Page.tsx haben. Diese gibt den Inhalt zurück den wir auf Localhost:3000 sehen. 
+
+
+### Prozesse
+
+Wichtig ist dass alle Container gestartet werden und der Comman run dev ( npm/yarn) verwendet wird. 
